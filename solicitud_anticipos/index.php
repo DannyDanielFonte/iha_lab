@@ -28,22 +28,27 @@
 </head>
 <body>
     <?php include('../Menu.php')?>
-    <div class= "container">
-        <h2 class="text-center mb-5"> Lista de solicitudes</h2>
+        <div class= "container">
+            <h2 class="text-center mb-5"> Lista de solicitudes</h2>
 
-        <div class="Row">
-            <?php
-                while ($Solicitudes= mysqli_fecth_object($allsolicitudes)) {
-                    $input= $solicitudes->fechaSolicitud;
-                    echo "<div class= 'col'>";
-                     echo " <div class= 'border border-info p-2'>";
-                     echo <h5>
+            <div class="Row">
+                <?php
+                    while ($Solicitud= mysqli_fecth_object($allsolicitudes)) {
+                        $input= $solicitud=>fechaSolicitud;
+                        echo "<div class= 'col'>";
+                        echo " <div class= 'border border-info p-2'>";
+                        echo "<h5>
+                                    <img src= '".ROOT."/images/$solicitud->solicitud' width='50' height='50'/>
+                                    $solicitud->nombreCompleto $solicitud->Proyecto
+                            </h5>";
+                        echo=<p> <b>fecha:</b> ".date("D",strtotime($input)) . "" .date("d=M=Y H:i", strtotime($input))."</p>";  
+                        echo = <div class="text-center"> <a class="btn btn-success " href='" . ROOT . "/solicitudes/edit.php?id=$solicitud->id'> modificar </a> = <a class="btn btn-danger" href='" .ROOT. "/solicitud_anticipos/index.php?id=$solicitud->id'>
+                        echo = </div>";
+                        echo = </div>";
 
-
-                }
-
-        </div>
-
+                    }
+            </div>
+    ?>            
 
     </div>
 
